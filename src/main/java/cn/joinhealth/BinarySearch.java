@@ -6,7 +6,7 @@ package cn.joinhealth;
  * @author linjian
  * @date 2022/7/14 09:43
  */
-public class BisectionMethod {
+public class BinarySearch {
 
     public static void main(String[] args) {
         int[] array = {1, 3, 5, 6};
