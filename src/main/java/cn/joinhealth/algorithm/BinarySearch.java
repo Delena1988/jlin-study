@@ -1,4 +1,4 @@
-package cn.joinhealth;
+package cn.joinhealth.algorithm;
 
 /**
  * 二分法
