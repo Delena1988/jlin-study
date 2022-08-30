@@ -2,10 +2,7 @@ package cn.joinhealth.stream;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,12 +14,12 @@ import java.util.stream.Stream;
 public class StreamHandleDemo {
 
     public static void main(String[] args) {
-        filterStreamDemo();
-        mapStreamDemo();
-        matchStreamDemo();
-        reduceStreamDemo();
-        collectStreamDemo();
-
+//        filterStreamDemo();
+//        mapStreamDemo();
+//        matchStreamDemo();
+//        reduceStreamDemo();
+//        collectStreamDemo();
+        mapFilterStreamDemo();
     }
 
     public static void filterStreamDemo() {
@@ -32,6 +29,7 @@ public class StreamHandleDemo {
         list.add("王力宏");
         list.add("林俊杰");
         list.add("陶喆");
+        list.add(null);
         Stream<String> stream = list.stream().filter(element -> element.contains("王"));
         stream.forEach(System.out::println);
         System.out.println();
@@ -102,6 +100,22 @@ public class StreamHandleDemo {
 
         String str = list.stream().collect(Collectors.joining(",")).toString();
         System.out.println(str);
+    }
+
+    public static void mapFilterStreamDemo() {
+        System.out.println("mapFilterStreamDemo: ");
+        User user1 = new User("001", 10, "张三");
+        User user2 = new User("002", 20, "李四");
+        User user3 = new User("003", 30, "王五");
+        User user4 = new User("003", 40, null);
+        List<User> userList = new ArrayList<>();
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        userList.add(user4);
+        Stream<String> stream = userList.stream().map(User::getUserName).filter(Objects::nonNull);
+        stream.forEach(System.out::println);
+        System.out.println();
     }
 
 }
