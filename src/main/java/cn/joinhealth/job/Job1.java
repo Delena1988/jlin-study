@@ -2,10 +2,7 @@ package cn.joinhealth.job;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.util.Random;
 
 /**
  * @author linjian
@@ -40,12 +37,12 @@ public class Job1 {
 //    }
 
 //    @Async
-    @Scheduled(fixedRate = 5 * 1000)
-    public void task4() throws InterruptedException {
-        log.info("className:{} taskName:{} start!!!", this.getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
-        int i = new Random().nextInt(10);
-        log.info("sleep: {}", i);
-        Thread.sleep(i * 1000);
-        log.info("className:{} taskName:{} stop!!!", this.getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
-    }
+//    @Scheduled(fixedRate = 5 * 1000)
+//    public void task4() throws InterruptedException {
+//        log.info("className:{} taskName:{} start!!!", this.getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
+//        int i = new Random().nextInt(10);
+//        log.info("sleep: {}", i);
+//        Thread.sleep(i * 1000);
+//        log.info("className:{} taskName:{} stop!!!", this.getClass().getName(), Thread.currentThread().getStackTrace()[1].getMethodName());
+//    }
 }
