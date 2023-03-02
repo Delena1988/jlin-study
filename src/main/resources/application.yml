@@ -1,9 +1,0 @@
-# 端口
-server:
-  port: 8000
-# 应用名称
-spring:
-  application:
-    name: jlin-study
-
-
