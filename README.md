@@ -4,4 +4,5 @@
 3. schedule 任务调度
 4. socket
 5. spring-cloud-alibaba
+6. spring-boot-sqlite springboot集成sqlite
 
