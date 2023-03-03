@@ -21,6 +21,7 @@
         <module>schedule</module>
         <module>socket</module>
         <module>spring-cloud-alibaba</module>
+        <module>spring-boot-sqlite</module>
     </modules>
 
 <!--    <dependencies>-->
