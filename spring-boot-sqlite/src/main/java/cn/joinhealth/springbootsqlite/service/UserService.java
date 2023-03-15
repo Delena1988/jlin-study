@@ -14,4 +14,12 @@ public interface UserService {
      * @return
      */
     User getById(Integer id);
+
+    /**
+     * 查询用户
+     *
+     * @param user
+     * @return
+     */
+    User selectUser(User user);
 }

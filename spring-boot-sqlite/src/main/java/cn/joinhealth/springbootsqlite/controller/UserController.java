@@ -25,4 +25,12 @@ public class UserController {
         log.info("user {}", user);
         return user;
     }
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUserById(@RequestBody User user) {
+        User resUser = userService.selectUser(user);
+        log.info("user {}", resUser);
+        return resUser;
+    }
 }

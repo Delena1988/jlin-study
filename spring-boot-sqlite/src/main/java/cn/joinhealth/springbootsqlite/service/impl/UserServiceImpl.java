@@ -3,6 +3,8 @@ package cn.joinhealth.springbootsqlite.service.impl;
 import cn.joinhealth.springbootsqlite.mapper.UserMapper;
 import cn.joinhealth.springbootsqlite.model.User;
 import cn.joinhealth.springbootsqlite.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,5 +27,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getById(Integer id) {
         return userMapper.selectById(id);
+    }
+
+    /**
+     * 查询用户
+     *
+     * @param user
+     * @return
+     */
+    @Override
+    public User selectUser(User user) {
+        QueryWrapper<User> wrapper = Wrappers.query();
+        wrapper.eq("id", user.getId())
+                .eq("name", user.getName());
+        return userMapper.selectOne(wrapper);
     }
 }
