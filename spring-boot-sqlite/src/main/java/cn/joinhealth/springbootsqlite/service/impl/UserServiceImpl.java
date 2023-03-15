@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     public User selectUser(User user) {
         QueryWrapper<User> wrapper = Wrappers.query();
         wrapper.eq("id", user.getId())
-                .eq("name", user.getName());
+                .or().eq("name", user.getName());
         return userMapper.selectOne(wrapper);
     }
 }
